@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class UserProfile(models.Model):
-    User = models.OneToOneField(user, on_delete=models.CASCADE, related_name = 'profile') #link to the built in user model
+    user = models.OneToOneField(user, on_delete=models.CASCADE, related_name = 'profile') #link to the built in user model
 
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
