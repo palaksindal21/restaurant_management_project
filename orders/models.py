@@ -13,7 +13,7 @@ class Order(models.Model): #Order model
     STATUS_CHOICES = [
         ('PENDING', 'Pending'),
         ('CONFIRMED', 'Confirmed'),
-        ('DELIEVERED', 'De;ievered'),
+        ('DELIVERED', 'Delivered'),
         ('CANCELED','Canceled')
 
     ]
@@ -47,13 +47,13 @@ class Order(models.Model): #Order model
 class OrderItem(models.Model):
     order = models.ForeignKey( #links back to order 
         Order,
-        on_delete = models.CASCADE
+        on_delete = models.CASCADE,
         related_name = 'Items'
     )
 
     menu_item = models.ForeignKey( # the dish being ordered
         Menu,
-        on_delete = models.CASCADE 
+        on_delete = models.CASCADE, 
         related_name = 'order_item'
     )
 
