@@ -48,7 +48,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey( #links back to order 
         Order,
         on_delete = models.CASCADE,
-        related_name = 'Items'
+        related_name = 'items'
     )
 
     menu_item = models.ForeignKey( # the dish being ordered
@@ -60,5 +60,5 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=1) #how many items ordered
 
     def __str__(self):
-        return f"{self.quantity} x {self.menu_item.name}
+        return f"{self.quantity} x {self.menu_item.name}"
 
