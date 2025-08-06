@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Menu(models.Model): #store the menu of restaurant
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    price = models.DecimalField(max_length=6, decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
         return self.name
@@ -60,5 +60,5 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=1) #how many items ordered
 
     def __str__(self):
-        return f"{self.quantity} x {self.menu_item.name}"
+        return f"{self.quantity} x {self.menu_item.name}",
 
