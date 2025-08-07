@@ -29,7 +29,7 @@ class OrderAdmin(admin.ModelAdmin):
     search_fields = ('customer__username',)
 
     #diplay orederitem inline within order edit page
-    inline = [OrderItemInline]
+    inlines = [OrderItemInline]
 
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
