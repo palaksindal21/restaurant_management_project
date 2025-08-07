@@ -1,13 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
-# Create your models here.
-class Menu(models.Model): #store the menu of restaurant
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+# from django.contrib.auth.models import User
+# # Create your models here.
+# class Menu(models.Model): #store the menu of restaurant
+#     name = models.CharField(max_length=100)
+#     description = models.TextField(blank=True)
+#     price = models.DecimalField(max_digits=6, decimal_places=2)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 class Order(models.Model): #Order model
     STATUS_CHOICES = [
