@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models inport Menu, Order, OrderItem #importing models
+from .models import Menu, Order, OrderItem #importing models
 
 @admin.register(Menu) #register the menu model using custom class
 class MenuAdmin(admin.ModelAdmin):
@@ -10,7 +10,7 @@ class MenuAdmin(admin.ModelAdmin):
     search_fields = ('name','price')
 
     #add filtering options based on price
-    list_filter = ('price')
+    list_filter = ('price',)
 
 class OrderItemInline(admin.TabularInline): #define an inline admin class to allow editing order item within the order admin
     model = OrderItem #specify which model to use inline
@@ -26,10 +26,10 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ('status', 'created_at')
 
     #allow searching by customer's name
-    search_fields = ('customer__username')
+    search_fields = ('customer__username',)
 
     #diplay orederitem inline within order edit page
-    inlines = [OrderItemInline]
+    inline = [OrderItemInline]
 
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
@@ -37,6 +37,6 @@ class OrderItemAdmin(admin.ModelAdmin):
     list_display = ('order', 'menu_item', 'quantity')
 
     #enable search by menu item name and customer name
-    search_fields = ('menu_item__name', 'order__cutomer__username')
+    search_fields = ('menu_item__name', 'order__customer__username')
 
 
