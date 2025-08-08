@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .models import Item
+from .models import Menu
 from .serializers import ItemSerializer
 
 '''
