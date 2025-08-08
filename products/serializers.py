@@ -6,7 +6,7 @@ class ItemSerializer(serializers.ModelSerializer):
         model = Item
         fields = '__all__'
 
-class MenuItem(serializers.Modelserializer):   #MenuItem serializer
+class MenuItem(serializers.ModelSerializer):   # MenuItem serializer
     class Meta:
         model = Menu
         fields = ['id', 'name', 'price', 'description']
