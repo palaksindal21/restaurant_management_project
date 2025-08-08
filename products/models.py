@@ -15,4 +15,4 @@ class Menu(models.Model):
     description = models.TextField(blank=True)
 
     def __str__(self):
-        return str()
+        return str(self.name)
