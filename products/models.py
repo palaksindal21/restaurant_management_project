@@ -10,4 +10,4 @@ class Item(models.Model):
         return str(self.item_name)
 
 class Menu(models.Model):
-    
+    name = models.CharField()
