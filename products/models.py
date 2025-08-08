@@ -10,4 +10,6 @@ class Item(models.Model):
         return str(self.item_name)
 
 class Menu(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    discr
