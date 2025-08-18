@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About - {{ restaurant_name }}</title>
+    </head>
+    <body>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+
+        <div class="about-container">
+            <h1>About {{ restaurant_name }}</h1>
+            <p>{{ description }}</p>
+            <img src="{{ img_url }}" alt="{{ restaurant_name }}">
+
+        </div>
+    </body>
+</html>
