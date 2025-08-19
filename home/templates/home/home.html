@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'home/style.css' %}">
-        <title>Home</title>
+        <title>{{ restaurant_name }}</title>
     </head>
 
     <body>
-         
-        <h1>Welcome to {{ restaurant_name }}</h1><br><br>
-        <div class="menu" id="menu">
+         <h1>Welcome to {{ restaurant_name }}</h1>
+        <h1>Restaurants's Menu</h1><br><br>
+        <div>
+            <div class="menu" id="menu">
             <!-- Menu items will be loaded here -->
+            </div>
         </div>
 
         <p>Call us at: <strong>{{ phone_number }}</strong></p>
@@ -19,32 +20,6 @@
         <script>
             // Fetch menu data from the API
             fetch('/menu/')
-                  .then(response => response.json())
-                  .then(data => {
-                       let menuHTML = ""
-                       data.forEach(item =>{
-                          menuHTML +=
-                             
-                            <div class="menu-item">
-                             
-                                <h3>${item.name}</h3>
-                             
-                                <p>${item.description}</p>
-                             
-                                <p class="price">${item.price}</p>
-                             
-                            </div>
-                          ;
-
-                        });
-                        document.getElementById('menu').innerHTML = menuHTML;
-                    });
-                    .catch(err =>{
-                        document.getElementById('menu').innerHTML = "<p>Unable to load menu</p>"
-                        console.error(err);
-                    });
-                
-                
             
         </script>
     </body>
