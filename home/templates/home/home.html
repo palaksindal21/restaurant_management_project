@@ -9,10 +9,12 @@
 
     <body>
          
-        <h1>Restaurants's Menu</h1><br><br>
+        <h1>Welcome to {{ restaurant_name }}</h1><br><br>
         <div class="menu" id="menu">
             <!-- Menu items will be loaded here -->
         </div>
+
+        <p>Call us at: <strong>{{ phone_number }}</strong></p>
         
         <script>
             // Fetch menu data from the API
