@@ -40,3 +40,18 @@ class MenuView(APIView):
             serializer.save() # save item to database
             return response(serializer.data, status=status.HTTP_201_CREATED)
         return response(serializer.error, status=status.HTTP_400_BAD_REQUEST)
+
+
+class MenuListView(APIView):
+    # GET retrieve all menu items
+    def get(self, request):
+        # list of menu items
+        menu_items = [
+            {"name": "Margherita Pizza", "description": "Classic pizza with cheese and tomato sauce", "price": 250},
+            {"name": "Veggie burger", "description": "Loaded with fresh veggies and cheese", "price": 180},
+            {"name": "Pasta", "description": "Creamy alfredo sauce with mushrooms", "price": 300},
+            {"name": "Cold coffee", "description": "Chilled coffee with ice cream", "price": 120}
+            
+        ]
+
+        return Response(menu_items, status=status.HTTP_200_OK)
