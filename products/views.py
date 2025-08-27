@@ -55,3 +55,17 @@ class MenuListView(APIView):
         ]
 
         return Response(menu_items, status=status.HTTP_200_OK)
+
+
+class CustomerListView(APIView):
+    def get(self, request):
+        try:
+            customers = Customer.objects.all().order_by("-created_at")
+            serializer = CustomerSerializer(customers, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
+        except DatabaseError as e:
+            return Response(
+                {"error":"A database error occured. Please try again later."},
+                status = status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
