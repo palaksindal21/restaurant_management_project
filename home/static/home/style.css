@@ -60,6 +60,22 @@ h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.search{
+
+    display:flex;
+    justify-content: center;
+    margin: 20px;
+
+}
+
+.search-bar{
+    border: 2px solid black;
+    border-radius: 15px;
+    width:350px;
+    padding: 10px;
+    font-size: 16px;
+}
+
 
 
 
