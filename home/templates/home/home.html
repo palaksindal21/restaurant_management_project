@@ -39,9 +39,11 @@
             fetch('/menu/')
             
         </script>
+        {% footer block %}
         <!-- footer -->
-        <footer>
-            <p>&copy; {{ current_year }} My Restaurant. All rights reserved.</p>
+        <footer class="footer">
+            <p>&copy; {{ year }} My Restaurant. All rights reserved.</p>
         </footer>
+        {% endblock %}
     </body>
 </html>
