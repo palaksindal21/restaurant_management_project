@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+    <h2>Leave your Feedback</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Give your feedback"><br><br>
+        <input type="submit" placeholder="submit">
+    </form>
+
+</div>
+{% endblock %}
